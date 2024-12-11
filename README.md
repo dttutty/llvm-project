@@ -1,5 +1,5 @@
 # Disclaimer
-Because I didn't have much time, I generated `LoopUnrolling.cpp` and `CodeAnalysis.cpp` using ChatGPT. I have just learned some basic knowledge of LLVM and CMake.
+Because I didn't have much time, I generated `LoopUnrolling.cpp` and `CodeAnalysis.cpp` using ChatGPT. I have just learned some basic knowledge of LLVM and CMake. I will learn more about how to write LibTool when I have time.
 
 # New added files
 [clang-tools-extra/loop-unrolling/LoopUnrolling.cpp](clang-tools-extra/loop-unrolling/LoopUnrolling.cpp)  
