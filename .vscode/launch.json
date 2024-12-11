@@ -6,8 +6,9 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/code-analysis",
+            "preLaunchTask": "build",
             "args": [
-                "NPB/CG/cg.cpp", // 输入文件
+                "${input:analysis-input}",
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -27,6 +28,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/loop-unrolling",
+            "preLaunchTask": "build",
             "args": [
                 "--unroll-factor",
                 "${input:unroll-factor}",
@@ -48,6 +50,12 @@
         }
     ],
     "inputs": [
+        {
+            "id": "analysis-input",
+            "type": "promptString",
+            "description": "input file path",
+            "default": "NPB/CG/cg.cpp"
+        },
         {
             "id": "input",
             "type": "promptString",
