@@ -113,7 +113,8 @@ public:
 
     void EndSourceFileAction() override {
         std::error_code EC;
-        llvm::raw_fd_ostream OutFile(OutputFilePath.empty() ? "-" : OutputFilePath, EC, llvm::sys::fs::OF_None);
+        std::string FilePath = OutputFilePath.empty() ? "-" : OutputFilePath.getValue();
+        llvm::raw_fd_ostream OutFile(FilePath, EC, llvm::sys::fs::OF_None);
 
         if (EC) {
             llvm::errs() << "Error writing to file: " << EC.message() << "\n";

@@ -1,0 +1,70 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "code-analysis",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/code-analysis",
+            "args": [
+                "NPB/CG/cg.cpp", // 输入文件
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "loop-unrolling",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/loop-unrolling",
+            "args": [
+                "--unroll-factor",
+                "${input:unroll-factor}",
+                "--output",
+                "${input:output}",
+                "${input:input}",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "input",
+            "type": "promptString",
+            "description": "input file path",
+            "default": "NPB/CG/example.cpp"
+        },
+        {
+            "id": "unroll-factor",
+            "type": "promptString",
+            "description": "unroll factor: 1, 2, 4, 8, etc.",
+            "default": "2"
+        },
+        {
+            "id": "output",
+            "type": "promptString",
+            "description": "output file path",
+            "default": "NPB/CG/example_unroll.cpp"
+        }
+    ]
+}

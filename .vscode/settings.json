@@ -1,0 +1,8 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/llvm",
+    "files.associations": {
+        "*.py": "python",
+        "system_error": "cpp",
+        "*.inc": "cpp"
+    }
+}
